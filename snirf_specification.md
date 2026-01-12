@@ -470,7 +470,7 @@ Index of the detector.
 * **Type**:  integer
 * **Location**: `/nirs(i)/data(j)/measurementList(k)/wavelengthIndex`
 
-Index of the "nominal" wavelength (in `probe.wavelengths`). For processed data (dataType = 99999) derived from multiple wavelengths or wavelength-independent data, the field MUST be present but may be empty.
+Index of the "nominal" wavelength (in `probe.wavelengths`). For processed data channels (dataType=99999) that are wavelength-independent or derived from multiple wavelengths, this field MUST be set to `0`.
 
 #### /nirs(i)/data(j)/measurementList(k)/wavelengthActual 
 * **Presence**: optional
@@ -592,7 +592,7 @@ Detector indices for each channel. A 1-D array with length equal to the size of 
 * **Type**:  integer 1-D array
 * **Location**: `/nirs(i)/data(j)/measurementLists/wavelengthIndex`
 
-Index of the "nominal" wavelength (in `probe.wavelengths`) for each channel. For processed data channels (dataType = 99999), the entry MUST be present but may be empty if no nominal wavelength applies. A 1-D array with length equal to the size of the second dimension of `/nirs(i)/data(j)/dataTimeSeries`.
+Index of the "nominal" wavelength (in `probe.wavelengths`) for each channel. A 1-D array with length equal to the size of the second dimension of `/nirs(i)/data(j)/dataTimeSeries`. For processed data channels (`dataType=99999`) that are wavelength-independent or derived from multiple wavelengths, the corresponding value MUST be `0`.
 
 #### /nirs(i)/data(j)/measurementLists/wavelengthActual 
 * **Presence**: optional
